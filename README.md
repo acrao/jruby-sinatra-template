@@ -48,23 +48,23 @@ then you'd need to add the following to ```~/.lein/profiles.clj```
 
 ## Useful commands
 
-### Clean all java dependencies
+#### Clean all java dependencies
     lein clean
 
-### Resolve + clean all java dependencies
+#### Resolve + clean all java dependencies
     lein do clean, deps
 
-### Resolve all ruby deps
-#### Developmend mode
+#### Resolve all ruby deps
+##### Developmend mode
     jruby -S bundle install --without nothing --no-deployment
 
-#### Deployment mode
+##### Deployment mode
     jruby -S bundle install --deployment --binstubs --without development test
 
-### Start local dev server
+#### Start local dev server
     rackup [-p <your port>]
 
-### Create a war
+#### Create a war
     jruby -S bundle exec warble
 
 ## License
