@@ -1,4 +1,4 @@
-# jruby-sinatra-template
+# jruby-sinatra lein template
 
 ```jruby-sinatra-template``` is a [Leiningen](http://leiningen.org/) template for
 Sinatra web applications that run primarily on the Jruby platform.
