@@ -1,0 +1,11 @@
+Pry.config.hooks.add_hook(:before_session, :load_path) do
+  root = File.expand_path(File.dirname(__FILE__))
+  add_paths = [root,
+               File.join(root, 'app'),
+               File.join(root, 'jars'),
+               File.join(root, 'lib')]
+  puts "Adding to load path #{add_paths}"
+  add_paths.each do |path|
+    $: << path unless $:.include?(path)
+  end
+end

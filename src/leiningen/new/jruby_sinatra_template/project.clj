@@ -1,20 +1,25 @@
-(defproject {{sanitized}} "0.1.0"
+(defproject {{sanitized}} "{{project-version}}"
 
   :description "{{sanitized}} - A Jruby based sinatra web application"
 
   :url ""
 
   :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
+            :url  "http://www.eclipse.org/legal/epl-v10.html"}
 
   :min-lein-version "2.0.0"
 
-  :plugins [[lein-libdir "0.1.1"]]
+  :plugins [[lein-libdir "0.1.1"]
+            [lein-shell "0.4.0"]]
 
   :libdir-path "jars"
 
-  :exclusions []
+  :aliases {"remove-jars" ["shell" "rm" "-rf" "jars"]
+            "clean" ["do" "clean," "remove-jars"]
+            "deps"  ["do" "deps," "libdir"]}
 
-  :dependencies [[]]
+  ;:exclusions []
 
-  :profiles {:dev [org.clojure/cojure "1.5.1"]})
+  ;:dependencies [[]]
+
+  :profiles {:dev {:dependencies [[org.clojure/clojure "{{clojure-version}}"]]}})
