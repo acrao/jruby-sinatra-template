@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Jruby-sinatra lein template by acrao</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Jruby-sinatra lein template</h1>
+          <h2>Leiningen template for a Sinatra web apps that runs on the Jruby platform</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/acrao/jruby-sinatra-template/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/acrao/jruby-sinatra-template/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/acrao/jruby-sinatra-template" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="jruby-sinatra-lein-template" class="anchor" href="#jruby-sinatra-lein-template"><span class="octicon octicon-link"></span></a>jruby-sinatra lein template</h1>
+
+<p><code>jruby-sinatra-template</code> is a <a href="http://leiningen.org/">Leiningen</a> template for
+Sinatra web applications that run primarily on the Jruby platform.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>You will need to install <a href="http://leiningen.org/">Leiningen</a> to use the template. Installation
+instruction can be found <a href="https://github.com/technomancy/leiningen#installation">here</a></p>
+
+<p>Once you have <a href="http://leiningen.org/">leiningen</a> installed and in your <code>$PATH</code>,
+then you'd need to add the following to <code>~/.lein/profiles.clj</code></p>
+
+<pre><code>{:user {:plugins [[jruby-sinatra/lein-template "0.1.0"]]}}
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code># Create a new project
+lein new jruby-sinatra my-new-web-app
+
+# Resolve all dependencies (java + ruby)
+cd my-new-web-app &amp;&amp; lein do clean, deps &amp;&amp; bundle install
+</code></pre>
+
+<h2>
+<a name="app-structure" class="anchor" href="#app-structure"><span class="octicon octicon-link"></span></a>App structure</h2>
+
+<pre><code>$ tree -a
+.
+├── .gitignote
+├── .pryrc
+├── .ruby-gemset
+├── .ruby-version
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── Rakefile
+├── app
+│   ├── application_controller.rb
+│   └── init.rb
+├── config
+│   └── warble.rb
+├── config.ru
+├── jars
+│   ├ ...
+│
+├── project.clj
+└── target
+    └ ...
+</code></pre>
+
+<h2>
+<a name="useful-commands" class="anchor" href="#useful-commands"><span class="octicon octicon-link"></span></a>Useful commands</h2>
+
+<h4>
+<a name="clean-all-java-dependencies" class="anchor" href="#clean-all-java-dependencies"><span class="octicon octicon-link"></span></a>Clean all java dependencies</h4>
+
+<pre><code>lein clean
+</code></pre>
+
+<h4>
+<a name="resolve--clean-all-java-dependencies" class="anchor" href="#resolve--clean-all-java-dependencies"><span class="octicon octicon-link"></span></a>Resolve + clean all java dependencies</h4>
+
+<pre><code>lein do clean, deps
+</code></pre>
+
+<h4>
+<a name="resolve-all-ruby-deps" class="anchor" href="#resolve-all-ruby-deps"><span class="octicon octicon-link"></span></a>Resolve all ruby deps</h4>
+
+<h5>
+<a name="developmend-mode" class="anchor" href="#developmend-mode"><span class="octicon octicon-link"></span></a>Developmend mode</h5>
+
+<pre><code>jruby -S bundle install --without nothing --no-deployment
+</code></pre>
+
+<h5>
+<a name="deployment-mode" class="anchor" href="#deployment-mode"><span class="octicon octicon-link"></span></a>Deployment mode</h5>
+
+<pre><code>jruby -S bundle install --deployment --binstubs --without development test
+</code></pre>
+
+<h4>
+<a name="start-local-dev-server" class="anchor" href="#start-local-dev-server"><span class="octicon octicon-link"></span></a>Start local dev server</h4>
+
+<pre><code>rackup [-p &lt;your port&gt;]
+</code></pre>
+
+<h4>
+<a name="create-a-war" class="anchor" href="#create-a-war"><span class="octicon octicon-link"></span></a>Create a war</h4>
+
+<pre><code>jruby -S bundle exec warble
+</code></pre>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright © 2014 Aditya Rao</p>
+
+<p>Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.</p>
+        </section>
+
+        <footer>
+          Jruby-sinatra lein template is maintained by <a href="https://github.com/acrao">acrao</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
