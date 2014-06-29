@@ -11,4 +11,21 @@
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' jruby-sinatra-template project.")
     (->files data
-             ["src/{{sanitized}}/foo.clj" (render "foo.clj" data)])))
+             [".gitignote"
+                (render "gitignore")
+              "project.clj"
+                (render "project.clj" data)
+              "README.md"
+                (render "README.md" data)
+              "src/{{sanitized}}/app/Gemfile"
+                (render "ruby/Gemfile" data)
+              "src/{{sanitized}}/app/Rakefile"
+                (render "ruby/Rakefile" data)
+              "src/{{sanitized}}/app/application_controller.rb"
+                (render "ruby/application_controller.rb.rb")
+              "src/{{sanitized}}/config/warble.rb"
+                (render "ruby/warble.rb")
+              ]
+    )
+  )
+)
