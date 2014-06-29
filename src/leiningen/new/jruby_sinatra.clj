@@ -1,12 +1,12 @@
-(ns leiningen.new.jruby-sinatra-template
+(ns leiningen.new.jruby-sinatra
   (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]
             [leiningen.core.main :as main]))
 
 (def ^{:const true} project-version "1.0.0-SNAPSHOT")
 
-(def render (renderer "jruby-sinatra-template"))
+(def render (renderer "jruby-sinatra"))
 
-(defn jruby-sinatra-template
+(defn jruby-sinatra
   "FIXME: write documentation"
   [name]
   (let [data {:name name
@@ -15,8 +15,7 @@
               :project-version project-version
               :jruby-version "jruby-1.7.8"}]
 
-    (println "Generating jruby-sinatra-template for app" (:sanitized data))
-    (main/info "Generating fresh 'lein new' jruby-sinatra-template project.")
+    (main/info "Generating fresh 'lein new' jruby-sinatra project" (:sanitized data))
     (->files data
              ; Dotfiles
              [".gitignote" (render "gitignore")]
@@ -31,5 +30,6 @@
              ["Rakefile" (render "ruby/Rakefile")]
              ["config.ru" (render "ruby/config.ru")]
              ["app/application_controller.rb" (render "ruby/application_controller.rb")]
+             ["app/init.rb" (render "ruby/init.rb")]
              ["config/warble.rb" (render "ruby/warble.rb")])
-    (println "All done! Croon away I say.")))
+    (main/info "All done! Croon away I say.")))

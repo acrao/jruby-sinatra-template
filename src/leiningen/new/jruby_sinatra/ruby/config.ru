@@ -11,6 +11,7 @@ add_paths.each do |path|
   $: << path unless $:.include?(path)
 end
 
+require 'init'
 require 'application_controller'
 
 map '/' do
