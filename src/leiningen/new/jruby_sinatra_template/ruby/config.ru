@@ -11,10 +11,6 @@ add_paths.each do |path|
   $: << path unless $:.include?(path)
 end
 
-$:.unshift File.join(root)
-$:.unshift
-$:.unshift File.join(root, 'jars')
-
 require 'application_controller'
 
 map '/' do
