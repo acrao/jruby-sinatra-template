@@ -9,6 +9,6 @@
   :pom-addition [:developers [:developer
                               [:name "Aditya Rao"]
                               [:url "http://adityacrao.com"]
-                              [:email "username@users.noreply.github.com"]
+                              [:email "acrao@users.noreply.github.com"]
                               [:timezone "-8"]]]
   :eval-in-leiningen true)
