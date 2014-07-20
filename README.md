@@ -5,6 +5,8 @@ Sinatra web applications that run primarily on the Jruby platform.
 
 ## Installation
 
+![Clojars Project](http://clojars.org/jruby-sinatra/lein-template/latest-version.svg)
+
 You will need to install [Leiningen](http://leiningen.org/) to use the template. Installation
 instruction can be found [here](https://github.com/technomancy/leiningen#installation)
 
