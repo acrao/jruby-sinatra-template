@@ -18,7 +18,7 @@
     (main/info "Generating fresh 'lein new' jruby-sinatra project" (:sanitized data))
     (->files data
              ; Dotfiles
-             [".gitignote" (render "gitignore")]
+             [".gitignore" (render "gitignore")]
              [".ruby-version" (render "ruby-version" data)]
              [".ruby-gemset" (render "ruby-gemset" data)]
              [".pryrc" (render "ruby/pryrc")]
