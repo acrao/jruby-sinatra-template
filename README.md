@@ -27,7 +27,7 @@ then you'd need to add the following to ```~/.lein/profiles.clj```
 
     $ tree -a
     .
-    ├── .gitignote
+    ├── .gitignore
     ├── .pryrc
     ├── .ruby-gemset
     ├── .ruby-version
